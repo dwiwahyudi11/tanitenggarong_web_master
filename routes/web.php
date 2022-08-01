@@ -7,7 +7,6 @@ use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TransaksiContoller;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Middleware\CekLevel;
 
 
 /*
