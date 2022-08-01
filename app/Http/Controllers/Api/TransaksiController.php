@@ -74,7 +74,7 @@ class TransaksiController extends Controller
         }
     }
 
-    public function history($id) {
+    public function history() {
         $transaksis = Transaksi::with(['user'])->whereHas('user', function ($query) use ($id) {
             $query->whereId($id);
         })->orderBy("id", "desc")->get();
