@@ -76,7 +76,7 @@
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="dripicons dripicons-suitcase"></i>
-                        <span>Teansaksi</span>
+                        <span>Transaksi</span>
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
