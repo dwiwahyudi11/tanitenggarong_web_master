@@ -7,7 +7,7 @@ use App\Http\Controllers\KonsumenController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TransaksiContoller;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Middleware\CekLevel;
+use App\Http\Controllers\Middleware;
 
 
 /*
@@ -30,7 +30,7 @@ Route::post('login/ceklogin',[HomeController::class,'ceklogin'])->name('ceklogin
 Route::get('register',[HomeController::class,'register'])->name('register');
 Route::post('register/daftar',[HomeController::class,'daftar'])->name('daftar');
 
-Route::group(['middleware'=>['auth','CekLevel:Admin']],function()
+Route::group(['middleware'=>['auth','ceklevel:Admin']],function()
 {
 	Route::get('admin/dashboard',[AdminController::class,'dashboard_admin'])->name('dashboard_admin');
 	Route::get('admin/profil',[AdminController::class,'profil_admin'])->name('profil_admin');
@@ -58,7 +58,7 @@ Route::group(['middleware'=>['auth','CekLevel:Admin']],function()
 });
 
 // 
-Route::group(['middleware'=>['auth','CekLevel:Admin,Petani']],function()
+Route::group(['middleware'=>['auth','ceklevel:Admin,Petani']],function()
 {
 	Route::get('petani/dashboard',[PetaniController::class,'dashboard'])->name('dashboard');
 	Route::get('petani/biodata',[PetaniController::class,'biodata'])->name('biodata');
@@ -89,7 +89,7 @@ Route::group(['middleware'=>['auth','CekLevel:Admin,Petani']],function()
 });
 
 // 
-Route::group(['middleware'=>['auth','CekLevel:Admin,Petani,Konsumen']],function()
+Route::group(['middleware'=>['auth','ceklevel:Admin,Petani,Konsumen']],function()
 {
 	Route::post('read-produk/addcart',[KonsumenController::class,'addcart'])->name('addcart');
 	Route::get('keranjang',[KonsumenController::class,'keranjang'])->name('keranjang');
