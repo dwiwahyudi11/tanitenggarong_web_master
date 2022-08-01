@@ -29,7 +29,7 @@ Route::post('login/ceklogin',[HomeController::class,'ceklogin'])->name('ceklogin
 Route::get('register',[HomeController::class,'register'])->name('register');
 Route::post('register/daftar',[HomeController::class,'daftar'])->name('daftar');
 
-Route::group(['middleware'=>['auth','Ceklevel:Admin']],function()
+Route::group(['Middleware'=>['Auth','Ceklevel:Admin']],function()
 {
 	Route::get('admin/dashboard',[AdminController::class,'dashboard_admin'])->name('dashboard_admin');
 	Route::get('admin/profil',[AdminController::class,'profil_admin'])->name('profil_admin');
@@ -57,7 +57,7 @@ Route::group(['middleware'=>['auth','Ceklevel:Admin']],function()
 });
 
 // 
-Route::group(['middleware'=>['auth','Ceklevel:Admin,Petani']],function()
+Route::group(['Middleware'=>['Auth','Ceklevel:Admin,Petani']],function()
 {
 	Route::get('petani/dashboard',[PetaniController::class,'dashboard'])->name('dashboard');
 	Route::get('petani/biodata',[PetaniController::class,'biodata'])->name('biodata');
@@ -88,7 +88,7 @@ Route::group(['middleware'=>['auth','Ceklevel:Admin,Petani']],function()
 });
 
 // 
-Route::group(['middleware'=>['auth','Ceklevel:Admin,Petani,Konsumen']],function()
+Route::group(['Middleware'=>['Auth','Ceklevel:Admin,Petani,Konsumen']],function()
 {
 	Route::post('read-produk/addcart',[KonsumenController::class,'addcart'])->name('addcart');
 	Route::get('keranjang',[KonsumenController::class,'keranjang'])->name('keranjang');
