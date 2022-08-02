@@ -45,7 +45,7 @@
                                 <td>{{"Rp.".number_format($data->total_transfer)}}</td>
                                 <td>{{ $data->bank }}</td>
                                 <td>{{ $data->status}}</td>
-                                <td><a href="{{ asset('storage/transfer/'.$data->bukti_transfer) }}" target="_blank">Lihat Bukti Pembayaran</a></td>
+                                <td><a href="{{ asset('/public/storage/transfer/'.$data->bukti_transfer) }}" target="_blank">Lihat Bukti Pembayaran</a></td>
                                 <td>
                                     @if($data->status == "DIKIRIM")
                                         <a href="{{ route('transaksiSelesai', $data->id) }}">
